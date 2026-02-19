@@ -2,26 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 155 40% 98%; /* Soft Islamic Green Tint */
+    --foreground: 160 50% 10%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 160 50% 10%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 50% 10%;
+    
+    --primary: 150 100% 25%; /* Emerald Green */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 45 90% 50%; /* Gold */
+    --secondary-foreground: 160 50% 10%;
+    
+    --muted: 155 20% 94%;
+    --muted-foreground: 160 40% 40%;
+    
+    --accent: 45 90% 50%;
+    --accent-foreground: 160 50% 10%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 160 30% 90%;
+    --input: 160 30% 90%;
+    --ring: 150 100% 25%;
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 160 50% 5%;
+    --foreground: 155 20% 94%;
+    
+    --card: 160 50% 8%;
+    --card-foreground: 155 20% 94%;
+    
+    --popover: 160 50% 8%;
+    --popover-foreground: 155 20% 94%;
+    
+    --primary: 150 60% 40%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 45 80% 40%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 160 40% 15%;
+    --muted-foreground: 155 20% 65%;
+    
+    --accent: 45 80% 40%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 160 40% 15%;
+    --input: 160 40% 15%;
+    --ring: 150 60% 40%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Custom Islamic Patterns or Gradients can be added here */
+.bg-islamic-pattern {
+  background-image: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.1) 0%, rgba(6, 78, 59, 0.4) 100%);
 }
